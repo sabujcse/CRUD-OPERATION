@@ -1,0 +1,44 @@
+﻿@model FirstEFApp.Models.Customer
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+<body>
+    <h1>Enter Customer Information</h1>
+    <form method="POST">
+        <div>
+            <table>
+                <tr>
+                    <td>Id</td>
+                    <td> <input type="number" id="id" name="Id" /></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td> <input type="text" id="name" name="Name" /></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td> <input type="text" id="address" name="Address" /></td>
+                </tr>
+                <tr>
+                    <td>Code:</td>
+                    <td> <input type="text" id="code" name="Code" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit"  value="Save"/></td>
+                    @Html.ActionLink("Show","Show","Customer")
+                </tr>
+
+            </table>
+
+        </div>
+    </form>
+</body>
+</html>

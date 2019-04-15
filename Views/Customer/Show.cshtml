@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FirstEFApp.Models.Customer>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Show</title>
+
+</head>
+<div>
+    @Html.ActionLink("Add New Customer","Save","Customer")
+</div>
+<body>
+   
+    <br />
+    <div> 
+        <table border="1">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Code</th>
+                <th>Action</th>
+            </tr>
+            @{ int i = 0;}
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@(++i)</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.Code</td>
+                <td>
+                    @Html.ActionLink("Edit", "Update","Customer", new {Id=item.Id},null)
+                    @Html.ActionLink("delete", "Delete","Customer",new { Id=item.Id},null)
+                </td>
+            </tr>
+              }
+               
+            </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@model FirstEFApp.Models.Customer
+@{
+    Layout = null;
+}
+
+<h2>Update Customer</h2>
+@using (Html.BeginForm("POST"))
+{
+    <div>
+        <table>
+            <tr>
+                <td>
+                    @Html.Label("ID")
+
+                </td>
+                <td>
+                    @Html.TextBox("ID")
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(c => c.Name)
+
+                </td>
+                <td>
+                    @Html.TextBoxFor(c => c.Name)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(c => c.Address)
+
+                </td>
+                <td>
+                    @Html.TextBoxFor(c => c.Address)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(c => c.Code)
+
+                </td>
+                <td>
+                    @Html.TextBoxFor(c => c.Code)
+                </td>
+
+            </tr>
+            <tr>
+                <td><input type="submit" value="UPDATE" /></td>
+                @Html.ActionLink("Show", "Show", "Customer")
+            </tr>
+        </table>
+    </div>
+}
